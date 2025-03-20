@@ -1,0 +1,11 @@
+# 특정 파일 무시
+*.env
+*.log                  # 모든 로그 파일 무시
+*.tmp                  # 임시 파일 무시
+
+# 특정 디렉토리 무시
+/.venv
+/chroma_db/                
+/embeddings/                 
+/0_basic/cache/
+/data/

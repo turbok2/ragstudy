@@ -1,0 +1,8 @@
+_type: "prompt"
+template: |
+  당신은 요약전문가입니다. 사용자의 입력 내용을 일고 2~3줄 이내로 요약 작성해주세요.
+  #Question:
+  {question}  
+  
+  #Answer:
+input_variables: ["question"]
