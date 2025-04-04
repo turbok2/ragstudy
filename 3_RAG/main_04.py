@@ -21,7 +21,7 @@ st.set_page_config(
     page_title="질의응답챗봇",
     page_icon="🤖",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state= "expanded", #"collapsed" 
 )
 st.title("❤️PDF 읽고 질문하기❤️")
 
@@ -141,7 +141,7 @@ if user_input:
             
     else:
         msg = 'PDF파일을 먼저 선택해주세요.'
-        st.chat_message("assistant") .write(msg)   
+        st.chat_message("assistant").write(msg)   
         # 대화기록을 저장한다.
         add_messages("user", user_input)
         add_messages("assistant", msg)    

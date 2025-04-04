@@ -170,17 +170,18 @@ if user_input:
         # 답변과 출처 정보를 함께 표시
         with st.chat_message("assistant"):
             container = st.empty()
-            if ai_answer=="I don't know.":
-                container.markdown(f"{ai_answer}")  # 답변 출력
+            if ai_answer.lower()=="I don't know.".lower():
+                final_anser = f"{ai_answer}"
             else:
-                container.markdown(f"{ai_answer}\n\n{sources_info}")  # 답변과 출처 출력
+                final_anser = f"{ai_answer}\n\n{sources_info}"
+            container.markdown(final_anser)  # 답변과 출처 출력
         # 대화기록을 저장한다.
         add_messages("user", user_input)
-        add_messages("assistant", f"{ai_answer}\n\n{sources_info}")    
+        add_messages("assistant", final_anser)    
             
     else:
         msg = 'PDF파일을 먼저 선택해주세요.'
-        st.chat_message("assistant") .write(msg)   
+        st.chat_message("assistant").write(msg)   
         # 대화기록을 저장한다.
         add_messages("user", user_input)
         add_messages("assistant", msg)    

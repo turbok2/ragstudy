@@ -81,8 +81,8 @@ if uploaded_file:
         retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
         st.session_state["retriever"] = retriever
         st.success("새로운 파일이 업로드되어 임베딩이 생성되었습니다.")
-    # else:
-    #     st.success("이전에 업로드한 파일과 동일하여 기존 임베딩을 사용합니다.")
+    else:
+        st.success("이전에 업로드한 파일과 동일하여 기존 임베딩을 사용합니다.")
         
 if "messages" not in st.session_state:
     st.session_state["messages"] = []
